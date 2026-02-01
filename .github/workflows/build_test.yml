@@ -1,4 +1,4 @@
-name: Build and test
+name: Build and tests
 
 on:
   push:
@@ -26,5 +26,11 @@ jobs:
     - name: Run build
       run: dotnet build --no-restore
       
-    - name: Run test
-      run: dotnet test --no-build --verbosity normal
+    - name: Run Project1 tests
+      run: dotnet test TestProject1/TestProject1.csproj --no-build --verbosity normal
+
+    - name: Run Project2 tests
+      run: dotnet test TestProject2/TestProject2.csproj --no-build --verbosity normal
+
+    - name: Run Project3 tests
+      run: dotnet test TestProject3/TestProject3.csproj --no-build --verbosity normal
